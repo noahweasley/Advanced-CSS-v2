@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards hover effect</title>
+  </head>
+  <style>
+    @import url(../style-2.css);
+
+    body {
+      background-color: cornflowerblue;
+    }
+
+    .container {
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: center;
+    }
+
+    .card {
+      cursor: pointer;
+      width: 300px;
+      height: 150px;
+      border-radius: 8px;
+      margin: 2vh;
+      transition: all 0.2s ease-in-out 0.1s;
+      transform: rotate(30deg);
+    }
+
+    .container > :nth-child(odd) {
+      background-color: azure;
+      box-shadow: 0 0 8px 4px rgb(0, 0, 0, 0.3);
+      z-index: 2;
+      animation: shuffle-cards-forward 1s ease-in-out 3s infinite alternate;
+    }
+
+    .container > :nth-child(even) {
+      box-shadow: 0 0 6px 4px rgb(0, 0, 0, 0.2);
+      z-index: 1;
+      animation: shuffle-cards-backward 1s ease-in-out 3s infinite alternate;
+      background-color: red;
+    }
+
+    @keyframes shuffle-cards-forward {
+      from {
+        transform: rotate(30deg) translateX(-5%);
+      }
+
+      to {
+        transform: rotate(30deg) translateX(5%);
+      }
+    }
+
+    @keyframes shuffle-cards-backward {
+      to {
+        transform: rotate(30deg) translateX(-5%);
+      }
+
+      from {
+        transform: rotate(30deg) translateX(5%);
+      }
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </body>
+</html>

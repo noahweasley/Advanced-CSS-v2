@@ -1,0 +1,26 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background-color: violet;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 100px;
+  height: 200px;
+  background-color: yellow;
+  border-radius: 8px;
+  box-shadow: 8px 8px black, 0px 8px black;
+}
+
+.box:active {
+  box-shadow: inset 8px 8px black, inset 0px 8px black;
+}

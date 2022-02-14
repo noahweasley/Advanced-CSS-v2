@@ -1,0 +1,34 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: limegreen;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(231, 217, 217);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  background-color: blueviolet;
+  text-align: center;
+  padding: 1em;
+  margin: 16px;
+  border-radius: calc(1em / 3);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.large {
+  font-size: 50px;
+}
+
+.medium {
+  font-size: 30px;
+}

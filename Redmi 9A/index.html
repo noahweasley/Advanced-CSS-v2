@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xiaomi Redmi 9A</title>
+  </head>
+  <style>
+    :root {
+      --variant-color: rgb(30, 30, 214);
+      --iphone-theme-color-1: var(--variant-color);
+      --iphone-theme-color-5: var(--variant-color);
+      --iphone-theme-color-2: var(--variant-color);
+      --iphone-theme-color-4: rgb(7, 7, 131);
+      --iphone-theme-color-3: var(--variant-color);
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+    }
+
+    @import url(../style-2.css);
+
+    body,
+    html {
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      background-color: #b66379;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: var(--iphone-theme-color-4);
+      text-align: center;
+      text-shadow: -2px -2px 8px rgb(61, 61, 117);
+      transition: 0.5s 0.2s;
+      transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      cursor: pointer;
+      letter-spacing: 0.1em;
+    }
+
+    h1:hover {
+      letter-spacing: 0.2em;
+    }
+
+    .iphone {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .volume-controls {
+      width: 3px;
+      height: 110px;
+      /* background-color: black; */
+      position: absolute;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      z-index: -1;
+    }
+
+    .volume-controls__left {
+      left: -5px;
+    }
+
+    .volume-controls__right {
+      right: -5px;
+    }
+
+    .volume-controls > * {
+      background-color: rgb(0, 0, 0);
+    }
+
+    .volume-controls > * + * {
+      margin-top: 8px;
+    }
+
+    .volume-up {
+      width: 100%;
+      height: calc(100% / 4);
+      /* background-color: blue; */
+    }
+
+    .volume-down {
+      width: 100%;
+      height: calc(100% / 4);
+      /* background-color: blue; */
+    }
+
+    .power {
+      width: 100%;
+      height: calc(100% / 3);
+      /* background-color: blue; */
+      margin-top: 15px;
+    }
+
+    .iphone-surface {
+      position: relative;
+      width: 220px;
+      height: 420px;
+      background-color: beige;
+      border-radius: 30px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.308);
+      transition: 0.6s 0.5s;
+      cursor: pointer;
+    }
+
+    .iphone__back {
+      background: linear-gradient(65deg, var(--iphone-theme-color-1), var(--iphone-theme-color-2));
+      border: 2px solid var(--iphone-theme-color-3);
+      box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.589);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(10px);
+    }
+
+    .iphone__back:hover {
+      transform: translateX(-20px);
+    }
+
+    .camera-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      bottom: 10px;
+      width: 30px;
+      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.171);
+    }
+
+    .name {
+      overflow: visible;
+      transform: rotate(-90deg);
+      color: rgb(172, 172, 172);
+      position: absolute;
+      top: 76%;
+      left: -8px;
+      font-size: 14px;
+    }
+
+    .camera-power {
+      font-size: 6px;
+      color: rgb(197, 195, 191);
+      text-align: center;
+    }
+
+    .camera {
+      width: 28px;
+      height: 80px;
+      border-radius: 20px;
+      background-color: black;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.281);
+      border: 1px solid #5c5b5b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 2px;
+    }
+
+    .camera-1 {
+      position: relative;
+      border-radius: 50%;
+      background-color: black;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #424343;
+      display: flex;
+      align-items: center;
+    }
+
+    .camera-1::before {
+      content: "";
+      position: relative;
+      left: 15%;
+      width: 45%;
+      height: 45%;
+      border-radius: 50%;
+      border: 3px solid #424343;
+    }
+
+    .camera > [class^="camera"]::after {
+      content: "";
+      position: relative;
+      width: 20%;
+      left: -35%;
+      height: 20%;
+      border-radius: 50%;
+      background-color: rgb(26, 26, 175);
+    }
+
+    .flash {
+      /* background-color: bisque; */
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 3px solid #424343;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flash::before {
+      content: "";
+      width: 45%;
+      background-color: rgb(151, 151, 126);
+      height: 45%;
+      border-radius: 50%;
+    }
+
+    .iphone__front {
+      position: relative;
+      background-color: #1b1b1b;
+      /* box-shadow: 0px 0px 8px 4px var(--iphone-theme-color-1); */
+      border: 5px solid var(--iphone-theme-color-5);
+      transform: translateX(-10px);
+      box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.822);
+      display: flex;
+      justify-content: center;
+    }
+
+    .iphone__front .screen-guard {
+      border-radius: 30px;
+      width: 90%;
+      height: 93%;
+      background-color: rgba(255, 0, 0, 0);
+      position: absolute;
+      border: 1px solid #2c2c2c;
+      top: 4%;
+    }
+
+    .iphone__front .selfie-cam {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .iphone__front .selfie-cam::after {
+      content: "";
+      display: block;
+      width: 150%;
+      height: 150%;
+      border-radius: 50%;
+      background-color: #1b1b1b;
+      position: absolute;
+      z-index: 1000;
+    }
+
+    .iphone__front > .selfie-cam::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background-color: black;
+      z-index: 3000;
+    }
+
+    .iphone__front:hover {
+      transform: translateX(20px);
+    }
+
+    img {
+      border-radius: 14px;
+      transition: 0.5s;
+    }
+
+    .speaker {
+      background-color: black;
+      width: 35%;
+      height: 8px;
+      border-bottom-right-radius: 40%;
+      border-bottom-left-radius: 40%;
+      transform: perspective(100px) rotateX(-40deg) translateY(-1px);
+      position: absolute;
+      top: 0px;
+    }
+  </style>
+
+  <body>
+    <h1 contenteditable="false">Xiaomi Redmi 9A</h1>
+
+    <div class="iphone">
+      <div class="iphone-surface iphone__back">
+        <div class="volume-controls volume-controls__left">
+          <div class="volume-up"></div>
+          <div class="volume-down"></div>
+          <div class="power"></div>
+        </div>
+
+        <div class="camera-label">
+          <div class="camera">
+            <div class="camera-1"></div>
+            <div class="flash"></div>
+            <p class="camera-power">13MP CAMERA</p>
+          </div>
+        </div>
+        <p class="name">Redmi 9A</p>
+      </div>
+
+      <div class="iphone-surface iphone__front">
+        <div class="screen-guard"></div>
+        <div class="selfie-cam"></div>
+        <div class="volume-controls volume-controls__right">
+          <div class="volume-up"></div>
+          <div class="volume-down"></div>
+          <div class="power"></div>
+        </div>
+
+        <div class="speaker"></div>
+      </div>
+    </div>
+  </body>
+</html>

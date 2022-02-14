@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards hover effect</title>
+  </head>
+  <style>
+    @import url(../style-2.css);
+
+    body {
+      background-color: cornflowerblue;
+    }
+
+    .container {
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: center;
+    }
+
+    .card {
+      width: 300px;
+      height: 150px;
+      background-color: azure;
+      border-radius: 8px;
+      margin: 2vh;
+      box-shadow: 0 0 8px 4px rgb(0, 0, 0, 0.3);
+      transition: all 0.2s ease-in 0.1s;
+    }
+
+    .card:hover {
+      transform: translateY(-5%);
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </body>
+</html>

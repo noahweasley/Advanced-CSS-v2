@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate animation</title>
+  </head>
+  <style>
+    @import url(../style-2.css);
+
+    body {
+      background-color: aquamarine;
+      perspective: 500px;
+    }
+
+    .rotate {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: blueviolet;
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      border-radius: 8px;
+      /* backface-visibility: hidden; */
+      animation: rotate 2s ease-in-out infinite forwards;
+    }
+
+    .rotate::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: 70%;
+      height: 50px;
+      background-color: red;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateX(0deg);
+      }
+
+      to {
+        transform: rotateX(360deg);
+      }
+    }
+  </style>
+
+  <body>
+    <div class="rotate"></div>
+  </body>
+</html>

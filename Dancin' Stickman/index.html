@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloody-samaritan</title>
+</head>
+
+<style>
+    @import url(../style-2.css);
+
+    :root {
+        --dancer-clr: pink;
+        --torso-height: 6em;
+        --leg-height: calc(var(--torso-height) - 40px);
+        --arm-height: calc((var(--torso-height) - 20px) / 2);
+        --head-diameter: calc(var(--torso-height) / 2.1);
+        --animation-time: 0.2s;
+    }
+
+    body {
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dancer {
+        width: 100px;
+        height: 200px;
+        /* background-color: black; */
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dancer-head {
+        position: absolute;
+        top: 0%;
+        width: var(--head-diameter);
+        height: var(--head-diameter);
+        border-radius: 50%;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-torso {
+        position: absolute;
+        top: 20%;
+        height: var(--torso-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-leg {
+        position: absolute;
+        top: calc(20% + var(--torso-height));
+        height: var(--leg-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-leg__left {
+        transform: rotateZ(30deg);
+        transform-origin: top;
+    }
+
+    .dancer-leg__right {
+        transform: rotateZ(-30deg);
+        transform-origin: top;
+    }
+
+    /* ------ Leg ------- */
+
+    .dancer-leg {
+        position: absolute;
+        top: calc(20% + var(--torso-height));
+        height: var(--leg-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-leg__left {
+        /* --i: 1; */
+        transform: rotateZ(45deg);
+        animation: move-leg var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    .dancer-leg__right {
+        /* --i: -1; */
+        transform: rotateZ(-45deg);
+        animation: move-leg-neg var(--animation-time) ease-in-out infinite alternate;
+
+    }
+
+    .dancer-upper-leg {
+        position: absolute;
+        height: var(--leg-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-upper-leg__left {
+        transform-origin: top;
+    }
+
+    .dancer-upper-leg__right {
+        transform-origin: top;
+    }
+
+    .dancer-lower-leg {
+        position: absolute;
+        top: var(--leg-height);
+        height: var(--leg-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-lower-leg__left {
+        transform: rotateZ(-35deg);
+        transform-origin: top right;
+        animation: __move-leg var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    .dancer-lower-leg__right {
+        transform: rotateZ(35deg);
+        transform-origin: top left;
+        animation: __move-leg-neg var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    /* ----  arm -----  */
+
+    .dancer-arm {
+        position: absolute;
+        top: calc(20% + (var(--torso-height) / 4));
+        height: calc(var(--arm-height) * 2);
+        width: 8px;
+        /* background-color: black; */
+        transform-origin: top;
+    }
+
+    .dancer-arm__left {
+        /* --i: 1; */
+        transform: rotateZ(90deg);
+        animation: move-arm var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    .dancer-arm__right {
+        /* --i: -1; */
+        transform: rotateZ(-90deg);
+        animation: move-arm-neg var(--animation-time) ease-in-out infinite alternate;
+
+    }
+
+    .dancer-upper-arm {
+        position: absolute;
+        height: var(--arm-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-upper-arm__left {
+        transform-origin: top;
+    }
+
+    .dancer-upper-arm__right {
+        transform-origin: top;
+    }
+
+    .dancer-lower-arm {
+        position: absolute;
+        top: calc(20% + (var(--torso-height) / 4) - 1px);
+        height: var(--arm-height);
+        width: 8px;
+        background-color: var(--dancer-clr);
+    }
+
+    .dancer-lower-arm__left {
+        transform: rotateZ(60deg);
+        transform-origin: top right;
+        animation: __move-arm var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    .dancer-lower-arm__right {
+        transform: rotateZ(-60deg);
+        transform-origin: top left;
+        animation: __move-arm-neg var(--animation-time) ease-in-out infinite alternate;
+    }
+
+    /* ------- animations  ------- */
+
+    @keyframes move-arm {
+        to {
+            transform: rotateZ(40deg);
+        }
+
+    }
+
+    @keyframes move-arm-neg {
+        to {
+            transform: rotateZ(-40deg);
+        }
+
+    }
+
+    @keyframes __move-arm {
+        to {
+            transform: rotateZ(10deg);
+        }
+
+    }
+
+    @keyframes __move-arm-neg {
+        to {
+            transform: rotateZ(-10deg);
+        }
+
+    }
+
+    @keyframes move-leg {
+        to {
+            transform: rotateZ(40deg);
+        }
+
+    }
+
+    @keyframes move-leg-neg {
+        to {
+            transform: rotateZ(-40deg);
+        }
+
+    }
+
+    @keyframes __move-leg {
+        to {
+            transform: rotateZ(10deg);
+        }
+
+    }
+
+    @keyframes __move-leg-neg {
+        to {
+            transform: rotateZ(-10deg);
+        }
+
+    }
+</style>
+
+<div class="dancer">
+
+    <div class="dancer-head"></div>
+    <div class="dancer-torso"></div>
+
+    <div class="dancer-arm dancer-arm__left">
+        <div class="dancer-upper-arm dancer-upper-arm__left"></div>
+        <div class="dancer-lower-arm dancer-lower-arm__left"></div>
+    </div>
+    <div class="dancer-arm dancer-arm__right">
+        <div class="dancer-upper-arm dancer-upper-arm__right"></div>
+        <div class="dancer-lower-arm dancer-lower-arm__right"></div>
+    </div>
+
+    <div class="dancer-leg dancer-leg__left">
+        <div class="dancer-upper-leg dancer-upper-leg__left"></div>
+        <div class="dancer-lower-leg dancer-lower-leg__left"></div>
+    </div>
+    <div class="dancer-leg dancer-leg__right">
+        <div class="dancer-upper-leg dancer-upper-leg__right"></div>
+        <div class="dancer-lower-leg dancer-lower-leg__right"></div>
+    </div>
+
+</div>
+
+<script>
+</script>
+</body>
+
+</html>

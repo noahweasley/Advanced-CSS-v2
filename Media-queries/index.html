@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media queries</title>
+  </head>
+
+  <style>
+    :root {
+      font-size: calc(0.1vw + 1em);
+    }
+
+    @media (min-width: 800px) {
+      :root {
+        font-size: calc(0.1vw + 1.2em);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        font-size: calc(0.1vw + 1.5em);
+      }
+    }
+
+    html,
+    body,
+    .container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container section {
+      padding: 1em;
+      line-height: 1.5em;
+      height: 30%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+
+    .large {
+      height: 40% !important;
+    }
+
+    .one {
+      background-color: blueviolet;
+      color: white;
+    }
+
+    .two {
+      background-color: yellow;
+      color: black;
+    }
+
+    .three {
+      background-color: brown;
+      color: white;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <section class="one">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa laboriosam voluptas magni ea, facilis ut nemo
+          corrupti possimus, quia obcaecati accusamus, nisi eaque sit. Quos, at! Ipsam nesciunt deleniti modi.
+        </p>
+      </section>
+      <section class="two large">
+        <p>
+          Eaque, magni perspiciatis nobis maiores vel blanditiis in explicabo esse aspernatur at molestias minima maxime
+          rem ut inventore deserunt autem ducimus harum necessitatibus magnam aliquid! Quas expedita enim at aut?
+        </p>
+      </section>
+      <section class="three">
+        <p>
+          Odit mollitia voluptatem sapiente culpa porro maiores itaque quae voluptatum. Eveniet quasi exercitationem
+          deserunt autem ut enim quo suscipit repellat nesciunt eum molestias incidunt accusamus cupiditate in, vero
+          provident odio.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

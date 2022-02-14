@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid sample 2</title>
+  </head>
+  <style>
+    @import url(../style.css);
+
+    :root {
+      --clr-dark: #1d2433;
+      --clr-darker: #171c28;
+      --clr-dark-content: #444d61;
+      --clr-light-content: #838892;
+      --txt-clr: #67748f;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      box-sizing: border-box;
+      color: var(--txt-clr);
+    }
+
+    body {
+      background-color: var(--clr-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid-container {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      /* background-color: red; */
+      gap: 5px;
+      max-width: 1080px;
+    }
+
+    .grid-container > * {
+      cursor: pointer;
+      user-select: none;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .grid-container > :nth-child(even) {
+      color: var(--clr-dark-content);
+      background-color: yellowgreen;
+    }
+
+    .grid-container > :nth-child(odd) {
+      color: var(--clr-light-content);
+      background-color: navy;
+    }
+
+    .box-1 {
+      grid-column: 1 / 4;
+      grid-row: 1 / 6;
+    }
+
+    .box-4 {
+      grid-row: 3 / 6;
+    }
+
+    .grid-container > :last-child {
+      grid-column: 2 / 5;
+    }
+  </style>
+
+  <body>
+    <div class="grid-container">
+      <div class="box-1">1</div>
+      <div class="box-2">2</div>
+      <div class="box-3">3</div>
+      <div class="box-4">4</div>
+      <div class="box-5">5</div>
+      <div class="box-6">6</div>
+    </div>
+  </body>
+</html>
