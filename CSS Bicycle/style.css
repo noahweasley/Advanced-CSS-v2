@@ -1,1 +1,78 @@
 @import url(../style-2.css);
+
+body {
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bike {
+  min-width: 180px;
+  min-height: 140px;
+  width: 60vh;
+  height: calc(60vh - calc(0.1vh + 80px));
+  /* background-color: red; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tire {
+  position: absolute;
+  width: calc(1vh + 100px);
+  height: calc(1vh + 100px);
+  border-radius: 50%;
+  border: calc(1vh + 11px) solid black;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  animation: 4s spin linear infinite forwards;
+}
+
+.tire__back {
+  right: 0px;
+}
+
+.tire__front {
+  left: 0px;
+}
+
+.net-elements {
+  position: absolute;
+  background-color: black;
+  width: 2px;
+  height: 50%;
+  transform: rotate(var(--i));
+  transform-origin: bottom;
+}
+
+.bike-spindle-circle {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.tank {
+   width: 60%;
+   height: 50%;
+   align-self: flex-start;
+   border-top: 80px solid black;
+   border-left: 60px solid transparent;
+   border-right: 60px solid transparent;
+   position: absolute;
+   top: 40%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
