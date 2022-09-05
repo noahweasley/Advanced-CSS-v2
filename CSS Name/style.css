@@ -1,0 +1,36 @@
+@import url(../style-2.css);
+
+:root {
+ font-size: 6em; 
+ color: white;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+* {
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    width: max-content;
+}
+
+span {
+    animation: jump-in 5s linear forwards;
+}
+
+@keyframes jump-in {
+   
+}
+
+
+
+
+

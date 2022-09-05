@@ -152,13 +152,13 @@ body {
 .fan-stand-mid__mid {
   width: 80%;
   height: 30%;
-  background-color: wheat;
+  background: linear-gradient(90deg, rgb(230, 211, 176), white, rgb(230, 211, 176));
 }
 
 .fan-stand-mid__bottom {
   width: 100%;
   height: 60%;
-  background-color: black;
+  background: linear-gradient(90deg, black, rgb(65, 65, 65), black);
   border-bottom-left-radius: 100vw;
   border-bottom-right-radius: 100vw;
 }
@@ -167,7 +167,7 @@ body {
   position: absolute;
   width: 200px;
   height: 80px;
-  background-color: black;
+  background: radial-gradient(rgb(37, 37, 37), black 40%);
   border-radius: 50%;
   top: 97%;
   z-index: -19990;
