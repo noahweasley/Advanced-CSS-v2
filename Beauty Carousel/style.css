@@ -23,10 +23,11 @@ body {
 }
 
 .carousel {
-  --card-pos: 45.1%;
+  /* --card-pos: 45.1%; */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1 0 auto;
   transform: translateX(var(--card-pos));
   gap: 3em;
   transition: 2s;
